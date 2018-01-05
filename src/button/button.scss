@@ -6,15 +6,41 @@
  * @modifiers
  *  .button--alert an alert button
  * @markup
- *   <button class="button">A button</button>
+ *   <button class="button">DEFAULD</button>
  *   <button class="button button--alert">
- *      An alert button
+ *      ALERT BUTTON
+ *   </button>
+ *   <button class="button main--button">
+ *      MAIN BUTTON
+ *   </button>
+  *   <button class="button sec--button">
+ *      SEC BUTTON
  *   </button>
  */
-.button {
+ .button {
     line-height: 40px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 100;
+    padding-right: 16px;
+    padding-left: 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    border: none;
+    outline: none;
+
     &.button--alert {
         color: white;
-        background-color: red;
+        background-color: #FF5252;
+    }
+    &.main--button {
+        color: white;
+        background-color: #3ecf8e;
+        
+    }
+    &.sec--button {
+        color: white;
+        background-color: #2196F3;
+
     }
 }
