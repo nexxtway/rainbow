@@ -1,0 +1,13 @@
+{
+    "title": "90milesbridge Rainbow",
+    "files": ["src/**/*.scss"],
+    "target": "./styleguide",
+    "css": [
+        "/styles/rainbow.css"
+    ],
+    "namespace": "page",
+    "verbose": 3,
+    "counterCSS": null,
+    "staticLipsum": false,
+    "placeholderService": false
+}
