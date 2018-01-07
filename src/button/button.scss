@@ -3,18 +3,89 @@
  * @section Navigation > Buttons
  * @description
  *  Buttons for various purposes.
- * @modifiers
- *  .button--alert an alert button
  * @markup
- *   <button class="button">A button</button>
- *   <button class="button button--alert">
- *      An alert button
- *   </button>
+ *   <div class="container">
+ *      <button class="button">
+ *          <div class="layer--inside">
+ *              DEFAULT BUTTON
+ *          </div>
+ *      </button>
+ *      <button class="button button--alert">
+ *         <div class="layer--inside layer--light">
+ *              ALERT BUTTON 
+ *         </div>
+ *      </button>
+ *      <button class="button button--primary">
+ *         <div class="layer--inside layer--light">
+ *              PRIMARY BUTTON
+ *          </div>
+ *      </button>
+ *      <button class="button button--secondary">
+ *         <div class="layer--inside layer--light">
+ *             SECONDARY BUTTON
+ *          </div>
+ *      </button>
+ *   <div>
  */
+ @import "font";
+ @import "color";
+
+$border--radius: 4px;
+$font--weidth: 100;
+$letter--spacing: 0.5px;
+$height: 40px;
+
+.container {
+    display: flex;
+    justify-content: space-between; 
+}
+
 .button {
-    line-height: 40px;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-radius: $border--radius;
+    background-color: $color--white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 6px, rgba(0, 0, 0, 0.15) 0px 1px 4px;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    color: $color--blue;
+    @include camphor($font--weidth, button--letter--spacing, $color--blue, $height);
+
+    &:active {
+        transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+    }
+
     &.button--alert {
-        color: white;
-        background-color: red;
+        background-color: $color--red;
+        color: $color--white;
+    }
+    &.button--primary {
+        background-color: $color--blue;
+        color: $color--white;
+    }
+    &.button--secondary {
+        background-color: $color--green;
+        color: $color--white;
+    }
+
+}
+
+.layer--inside {
+    box-sizing: border-box;
+    border-radius: $border--radius; 
+    background-color: transparent;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    padding: 0 16px;
+    
+    &:hover {
+        background-color: $color--lighter--blue;
+    }
+
+    &.layer--light:hover {
+        background-color: $color--white--transparent;
     }
 }
+
