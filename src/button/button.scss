@@ -3,44 +3,82 @@
  * @section Navigation > Buttons
  * @description
  *  Buttons for various purposes.
- * @modifiers
- *  .button--alert an alert button
  * @markup
- *   <button class="button">DEFAULD</button>
+ *   <button class="button button--default">
+ *       <div class="default">
+ *           <span class="button--text">DEFAULT BUTTON</span>
+ *       </div>
+ *  </button>
  *   <button class="button button--alert">
- *      ALERT BUTTON
+ *      <div class="hover--styles">
+ *           <span class="button--text">ALERT BUTTON</span>
+ *       </div>
  *   </button>
- *   <button class="button main--button">
- *      MAIN BUTTON
+ *   <button class="button button--primary">
+ *      <div class="hover--styles">
+ *           <span class="button--text">PRIMARY BUTTON</span>
+ *       </div>
  *   </button>
-  *   <button class="button sec--button">
- *      SEC BUTTON
+ *   <button class="button button--secondary">
+ *      <div class="hover--styles">
+ *          <span class="button--text">SECONDARY BUTTON</span>
+ *       </div>
  *   </button>
  */
+ @import "font";
+ @import "color";
+
  .button {
-    line-height: 40px;
-    font-size: 14px;
-    letter-spacing: 1px;
-    font-weight: 100;
-    padding-right: 16px;
-    padding-left: 16px;
+    margin: 16px;
+    padding: 0;
     border-radius: 4px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
     border: none;
     outline: none;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    cursor: pointer;
 
-    &.button--alert {
-        color: white;
-        background-color: #FF5252;
+    &:active {
+        transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px; 
     }
-    &.main--button {
-        color: white;
-        background-color: #3ecf8e;
-        
-    }
-    &.sec--button {
-        color: white;
-        background-color: #2196F3;
+}
 
+.button--text {
+    padding-right: 16px;
+    padding-left: 16px;
+    @include font-button-style(100, 0.5px, #fff);
+}
+
+.button--alert {
+    background-color: $color--red;
+}
+
+.button--primary {
+    background-color: $color--blue;  
+}
+
+.button--secondary {
+    background-color: $color--green;
+}
+
+.button--default {
+    background-color: $color--white;
+    span {
+        color: $color--blue;
+    }
+}
+
+button div {
+    &:hover {
+    line-height: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    }
+
+    &.default:hover {
+        background-color: rgba(33, 150, 243, 0.08);
     }
 }

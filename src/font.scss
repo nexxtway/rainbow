@@ -1,0 +1,8 @@
+
+@mixin font-button-style($font-weidth, $font-letter-spacing, $color){
+    font-size: 14px;
+    line-height: 40px;
+    font-weight: $font-weidth;
+    letter-spacing: $font-letter-spacing;
+    color: $color;
+} 
