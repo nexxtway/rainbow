@@ -4,26 +4,28 @@
  * @description
  *  Buttons for various purposes.
  * @markup
- *   <button class="button">
- *       <div class="layer--inside">
- *           DEFAULT BUTTON
- *       </div>
- *   </button>
- *   <button class="button button--alert">
- *      <div class="layer--inside layer--light">
- *           ALERT BUTTON 
- *      </div>
- *   </button>
- *   <button class="button button--primary">
- *      <div class="layer--inside layer--light">
- *           PRIMARY BUTTON
- *       </div>
- *   </button>
- *   <button class="button button--secondary">
- *      <div class="layer--inside layer--light">
- *          SECONDARY BUTTON
- *       </div>
- *   </button>
+ *   <div class="container">
+ *      <button class="button">
+ *          <div class="layer--inside">
+ *              DEFAULT BUTTON
+ *          </div>
+ *      </button>
+ *      <button class="button button--alert">
+ *         <div class="layer--inside layer--light">
+ *              ALERT BUTTON 
+ *         </div>
+ *      </button>
+ *      <button class="button button--primary">
+ *         <div class="layer--inside layer--light">
+ *              PRIMARY BUTTON
+ *          </div>
+ *      </button>
+ *      <button class="button button--secondary">
+ *         <div class="layer--inside layer--light">
+ *             SECONDARY BUTTON
+ *          </div>
+ *      </button>
+ *   <div>
  */
  @import "font";
  @import "color";
@@ -33,6 +35,10 @@ $font--weidth: 100;
 $letter--spacing: 0.5px;
 $height: 40px;
 
+.container {
+    display: flex;
+    justify-content: space-between; 
+}
 
 .button {
     padding: 0;
