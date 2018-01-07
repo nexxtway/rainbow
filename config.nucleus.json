@@ -3,7 +3,7 @@
     "files": ["src/**/*.scss"],
     "target": "./styleguide",
     "css": [
-        "/styles/rainbow.css"
+        "styles/rainbow.css"
     ],
     "namespace": "page",
     "verbose": 3,
