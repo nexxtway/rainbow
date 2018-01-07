@@ -1,8 +1,9 @@
 
-@mixin font-button-style($font-weidth, $font-letter-spacing, $color){
+@mixin camphor($weidth: 100, $letter-spacing: 0.5px, $color: #2196F3, $height:40px) {
+    font-family: 'arial';
     font-size: 14px;
-    line-height: 40px;
-    font-weight: $font-weidth;
-    letter-spacing: $font-letter-spacing;
+    line-height: $height;
+    font-weight: $weidth;
+    letter-spacing: $letter-spacing;
     color: $color;
-} 
+}

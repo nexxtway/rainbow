@@ -1,11 +1,17 @@
 /** @color white */
 $color--white: #ffffff;
 
+/** @color white-transparent */
+$color--white--transparent: rgba(255, 255, 255, 0.4);
+
 /** @color green */
 $color--green: #3ecf8e;
 
 /** @color blue */
 $color--blue : #2196F3;
+
+/** @color lighter-blue */
+$color--lighter--blue: rgba(33, 150, 243, 0.1);
 
 /** @color red */
 $color--red: #FF5252;

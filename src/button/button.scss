@@ -4,81 +4,82 @@
  * @description
  *  Buttons for various purposes.
  * @markup
- *   <button class="button button--default">
- *       <div class="default">
- *           <span class="button--text">DEFAULT BUTTON</span>
- *       </div>
- *  </button>
- *   <button class="button button--alert">
- *      <div>
- *           <span class="button--text">ALERT BUTTON</span>
+ *   <button class="button">
+ *       <div class="layer--inside">
+ *           DEFAULT BUTTON
  *       </div>
  *   </button>
+ *   <button class="button button--alert">
+ *      <div class="layer--inside layer--light">
+ *           ALERT BUTTON 
+ *      </div>
+ *   </button>
  *   <button class="button button--primary">
- *      <div>
- *           <span class="button--text">PRIMARY BUTTON</span>
+ *      <div class="layer--inside layer--light">
+ *           PRIMARY BUTTON
  *       </div>
  *   </button>
  *   <button class="button button--secondary">
- *      <div>
- *          <span class="button--text">SECONDARY BUTTON</span>
+ *      <div class="layer--inside layer--light">
+ *          SECONDARY BUTTON
  *       </div>
  *   </button>
  */
  @import "font";
  @import "color";
 
- .button {
-    margin: 16px;
+$border--radius: 4px;
+$font--weidth: 100;
+$letter--spacing: 0.5px;
+$height: 40px;
+
+
+.button {
     padding: 0;
-    border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
-    border: none;
+    margin: 0;
     outline: none;
-    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     cursor: pointer;
+    border: none;
+    border-radius: $border--radius;
+    background-color: $color--white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 6px, rgba(0, 0, 0, 0.15) 0px 1px 4px;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    color: $color--blue;
+    @include camphor($font--weidth, button--letter--spacing, $color--blue, $height);
 
     &:active {
         transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px; 
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
     }
-}
 
-.button--text {
-    padding-right: 16px;
-    padding-left: 16px;
-    @include font-button-style(100, 0.5px, #fff);
-}
-
-.button--alert {
-    background-color: $color--red;
-}
-
-.button--primary {
-    background-color: $color--blue;  
-}
-
-.button--secondary {
-    background-color: $color--green;
-}
-
-.button--default {
-    background-color: $color--white;
-    span {
-        color: $color--blue;
+    &.button--alert {
+        background-color: $color--red;
+        color: $color--white;
     }
+    &.button--primary {
+        background-color: $color--blue;
+        color: $color--white;
+    }
+    &.button--secondary {
+        background-color: $color--green;
+        color: $color--white;
+    }
+
 }
 
-button div {
-    &:hover {
-    line-height: 40px;
-    height: 40px;
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.4);
+.layer--inside {
+    box-sizing: border-box;
+    border-radius: $border--radius; 
+    background-color: transparent;
     transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    padding: 0 16px;
+    
+    &:hover {
+        background-color: $color--lighter--blue;
     }
 
-    &.default:hover {
-        background-color: rgba(33, 150, 243, 0.08);
+    &.layer--light:hover {
+        background-color: $color--white--transparent;
     }
 }
+
