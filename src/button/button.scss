@@ -5,87 +5,89 @@
  *  Buttons for various purposes.
  * @markup
  *   <div class="container">
- *      <button class="button">
- *          <div class="layer--inside">
- *              DEFAULT BUTTON
+ *      <button class="rainbow-button">
+ *          <div class="rainbow-button-hover">
+ *              default button
  *          </div>
  *      </button>
- *      <button class="button button--alert">
- *         <div class="layer--inside layer--light">
- *              ALERT BUTTON 
+ *      <button class="rainbow-button rainbow-button--alert">
+ *         <div class="rainbow-button-hover rainbow-button-hover--light">
+ *              alert button 
  *         </div>
  *      </button>
- *      <button class="button button--primary">
- *         <div class="layer--inside layer--light">
- *              PRIMARY BUTTON
+ *      <button class="rainbow-button rainbow-button--primary">
+ *         <div class="rainbow-button-hover rainbow-button-hover--light">
+ *              primary button
  *          </div>
  *      </button>
- *      <button class="button button--secondary">
- *         <div class="layer--inside layer--light">
- *             SECONDARY BUTTON
+ *      <button class="rainbow-button rainbow-button--secondary">
+ *         <div class="rainbow-button-hover rainbow-button-hover--light">
+ *             secondary button
  *          </div>
- *      </button>
+ *      </button> 
  *   <div>
  */
  @import "font";
  @import "color";
 
-$border--radius: 4px;
-$font--weidth: 100;
-$letter--spacing: 0.5px;
-$height: 40px;
+$rainbow-button--border--radius: 4px;
+$rainbow-button--font--weidth: 100;
+$rainbow-button--height: 40px;
 
 .container {
     display: flex;
     justify-content: space-between; 
 }
 
-.button {
+.rainbow-button {
     padding: 0;
     margin: 0;
     outline: none;
     cursor: pointer;
     border: none;
-    border-radius: $border--radius;
-    background-color: $color--white;
+    border-radius: $rainbow-button--border--radius;
+    background-color: $rainbow-color--white;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 6px, rgba(0, 0, 0, 0.15) 0px 1px 4px;
     transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
-    color: $color--blue;
-    @include camphor($font--weidth, button--letter--spacing, $color--blue, $height);
+    color: $rainbow-color--blue;
+    font-size: 14px;
+    line-height: $rainbow-button--height;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    @include camphor($rainbow-button--font--weidth);
 
     &:active {
         transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
         box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
     }
 
-    &.button--alert {
-        background-color: $color--red;
-        color: $color--white;
+    &.rainbow-button--alert {
+        background-color: $rainbow-color--red;
+        color: $rainbow-color--white;
     }
-    &.button--primary {
-        background-color: $color--blue;
-        color: $color--white;
+    &.rainbow-button--primary {
+        background-color: $rainbow-color--blue;
+        color: $rainbow-color--white;
     }
-    &.button--secondary {
-        background-color: $color--green;
-        color: $color--white;
+    &.rainbow-button--secondary {
+        background-color: $rainbow-color--green;
+        color: $rainbow-color--white;
     }
 
-}
-
-.layer--inside {
-    box-sizing: border-box;
-    border-radius: $border--radius; 
-    background-color: transparent;
-    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
-    padding: 0 16px;
+    .rainbow-button-hover {
+        box-sizing: border-box;
+        border-radius: $rainbow-button--border--radius; 
+        background-color: transparent;
+        transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+        padding: 0 16px;
+        
+        &:hover {
+            background-color: $rainbow-color--lighter--blue;
+        }
     
-    &:hover {
-        background-color: $color--lighter--blue;
+        &.rainbow-button-hover--light:hover {
+            background-color: $rainbow-color--white--transparent;
+        }
     }
 
-    &.layer--light:hover {
-        background-color: $color--white--transparent;
-    }
 }
-
