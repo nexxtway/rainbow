@@ -1,0 +1,89 @@
+/**
+ * @atom Button
+ * @section Navigation > Buttons
+ * @description
+ *  Buttons for various purposes.
+ * @markup
+ *   <div class="container">
+ *      <button class="rainbow-button">
+ *          <div class="rainbow-button-hover">
+ *              default button
+ *          </div>
+ *      </button>
+ *      <button class="rainbow-button rainbow-button--alert">
+ *         <div class="rainbow-button-hover rainbow-button-hover--light">
+ *              alert button 
+ *         </div>
+ *      </button>
+ *      <button class="rainbow-button rainbow-button--primary">
+ *         <div class="rainbow-button-hover rainbow-button-hover--light">
+ *              primary button
+ *          </div>
+ *      </button>
+ *      <button class="rainbow-button rainbow-button--secondary">
+ *         <div class="rainbow-button-hover rainbow-button-hover--light">
+ *             secondary button
+ *          </div>
+ *      </button> 
+ *   <div>
+ */
+/** @color white */
+/** @color white-transparent */
+/** @color green */
+/** @color blue */
+/** @color lighter-blue */
+/** @color red */
+.container {
+  display: flex;
+  justify-content: space-between; }
+
+.rainbow-button {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 6px, rgba(0, 0, 0, 0.15) 0px 1px 4px;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  color: #2196F3;
+  font-size: 14px;
+  line-height: 40px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: 'arial';
+  font-weight: 100; }
+  .rainbow-button:active {
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px; }
+  .rainbow-button.rainbow-button--alert {
+    background-color: #FF5252;
+    color: #ffffff; }
+  .rainbow-button.rainbow-button--primary {
+    background-color: #2196F3;
+    color: #ffffff; }
+  .rainbow-button.rainbow-button--secondary {
+    background-color: #3ecf8e;
+    color: #ffffff; }
+  .rainbow-button .rainbow-button-hover {
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    padding: 0 16px; }
+    .rainbow-button .rainbow-button-hover:hover {
+      background-color: rgba(33, 150, 243, 0.1); }
+    .rainbow-button .rainbow-button-hover.rainbow-button-hover--light:hover {
+      background-color: rgba(255, 255, 255, 0.4); }
+
+/**
+ * @atom Link
+ * @section Navigation > Links
+ * @description
+ *  Link for various purposes.
+ * @markup
+ *   <a class="rainbow-link" href="javascript:void(0)">A link</button>
+ */
+.rainbow-link {
+  color: blue; }
