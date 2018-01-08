@@ -1,9 +1,5 @@
 
-@mixin camphor($weidth: 100, $letter-spacing: 0.5px, $color: #2196F3, $height:1.5) {
+@mixin camphor($weidth: 100) {
     font-family: 'arial';
-    font-size: 14px;
-    line-height: $height;
     font-weight: $weidth;
-    letter-spacing: $letter-spacing;
-    color: $color;
 }
