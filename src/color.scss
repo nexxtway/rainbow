@@ -2,7 +2,10 @@
 $rainbow-color--white: #ffffff;
 
 /** @color white-transparent */
-$rainbow-color--white--transparent: rgba(255, 255, 255, 0.4);
+$rainbow-color--white--transparent: rgba(255, 255, 255, 0.25);
+
+/** @color white-semi-transparent */
+$rainbow-color--white--semi-transparent: rgba(255, 255, 255, 0.55);
 
 /** @color green */
 $rainbow-color--green: #3ecf8e;
@@ -11,7 +14,11 @@ $rainbow-color--green: #3ecf8e;
 $rainbow-color--blue : #2196F3;
 
 /** @color lighter-blue */
-$rainbow-color--lighter--blue: rgba(33, 150, 243, 0.1);
+$rainbow-color--lighter--blue: rgba(33, 150, 243, 0.15);
+
+/** @color light-blue */
+$rainbow-color--light--blue: rgba(33, 150, 243, 0.25);
+
 
 /** @color red */
 $rainbow-color--red: #FF5252;
