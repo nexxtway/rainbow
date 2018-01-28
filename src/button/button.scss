@@ -25,7 +25,7 @@
  *             secondary button
  *          </div>
  *      </button> 
- *   <div>
+ *   </div>
  */
  @import "font";
  @import "color";
@@ -47,16 +47,17 @@ $rainbow-button--height: 40px;
     border-radius: $rainbow-button--border--radius;
     background-color: $rainbow-color--white;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 6px, rgba(0, 0, 0, 0.15) 0px 1px 4px;
-    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     color: $rainbow-color--blue;
     font-size: 14px;
+    height: 40px;
     line-height: $rainbow-button--height;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     @include camphor(100);
+    position: relative;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 
     &:active {
-        transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
         box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
     }
 
@@ -72,7 +73,7 @@ $rainbow-button--height: 40px;
         background-color: $rainbow-color--green;
         color: $rainbow-color--white;
     }
-
+    
     .rainbow-button-hover {
         box-sizing: border-box;
         border-radius: $rainbow-button--border--radius; 
@@ -83,10 +84,36 @@ $rainbow-button--height: 40px;
         &:hover {
             background-color: $rainbow-color--lighter--blue;
         }
-    
+
+        /*Button transition*/
+        &:after {
+            content: "";
+            background-color: $rainbow-color--light--blue;
+            opacity: 0;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding-bottom: $rainbow-button--height;
+            padding-left: 100%;
+            border-radius: 0 0 0 0;
+            transition: all 0.6s;
+        }
+        
+        &:active:after {
+            padding: 0;
+            padding-left: 100%;
+            margin: 0;
+            opacity: 1;
+            transition: 0s;
+        }
+         
         &.rainbow-button-hover--light:hover {
             background-color: $rainbow-color--white--transparent;
-        }
-    }
 
+            &:after {
+                background-color: $rainbow-color--white--semi-transparent;
+            }
+        }
+    }  
 }
